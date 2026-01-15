@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Love Letter ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(to bottom, #fff0f5, #ffe6f0);
+  overflow-x: hidden;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #c94f7c;
+  margin-bottom: 30px;
+}
+
+.letter {
+  max-width: 850px;
+  background: white;
+  margin: auto;
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  font-size: 1.25em;
+  line-height: 1.8em;
+  color: #333;
+}
+
+.letter p {
+  text-align: left;
+}
+
+/* Flower petals */
+.petal {
+  position: fixed;
+  top: -20px;
+  font-size: 22px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>💌 My Love Letter to You 💌</h1>
+
+<div class="letter">
+<p>
+My Love,<br><br>
+
+Three months have passed, and every day with you feels like a gift I never knew I deserved. I still pinch myself sometimes, thinking—how did I get so lucky to have you in my life? You are my calm in the chaos, my home in the storm, and the joy I never imagined I could feel.<br><br>
+
+I want you to know how deeply I see and admire you—not just the big moments, but the quiet, everyday ways you make life beautiful. The way you carry yourself, so strong and independent, yet so kind and caring to everyone around you. I see how much effort you put into everything, even when it doesn’t come naturally, and it humbles me. Your confidence, your warmth, your heart—they captivate me, and I am endlessly grateful to walk this life beside you.<br><br>
+
+Being able to call you my wife, to hear you call me husband, still feels surreal sometimes. Every smile of yours, every word, every glance, leaves me more certain that you are my forever. I don’t take a single moment for granted. Even the simplest times we share—the laughter, the teasing, the quiet peace—remind me of the love we’ve built in these three months.<br><br>
+
+I hope you always feel safe and cherished with me. I want to be your calm, your anchor, your partner in all things, in this world and the next. Insha’Allah, I pray for your happiness, your health, and that we continue to grow together, supporting and loving each other every single day, in this life and in the hereafter.<br><br>
+
+Thank you for letting me love you. Thank you for being patient, for being you, and for choosing me. I promise to always value, celebrate, and protect you, with my heart and soul. You are my world, my joy, my peace, my love, and nothing could ever change that.<br><br>
+
+All my love, all my heart, all my gratitude — always and only yours ❤️
+</p>
+</div>
+
+<script>
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+  petal.innerText = "🌸";
+  petal.style.left = Math.random() * window.innerWidth + "px";
+  petal.style.animationDuration = (5 + Math.random() * 6) + "s";
+  petal.style.fontSize = (14 + Math.random() * 22) + "px";
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 12000);
+}
+
+setInterval(createPetal, 300);
+</script>
+
+</body>
+</html>
