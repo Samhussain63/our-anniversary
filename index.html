@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our 3 Months ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  background: linear-gradient(#ffe6f0, #fff);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating Hearts */
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: float 5s linear infinite;
+  user-select: none;
+}
+@keyframes float {
+  0% {transform: translateY(0) translateX(0);}
+  50% {transform: translateY(-200px) translateX(20px);}
+  100% {transform: translateY(-400px) translateX(-20px);}
+}
+
+/* Landing Page */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(255,182,193,0.6), rgba(255,182,193,0.6)), 
+              url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  color: white;
+}
+.hero button {
+  padding: 15px 30px;
+  background: pink;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Story Section */
+.section {
+  max-width: 900px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Countdown */
+#countdown {
+  font-size: 2em;
+  color: #ff6699;
+  margin: 20px 0;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  width: 500px;
+  height: 300px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* keeps entire image visible */
+  background: #ffe6f0;  /* optional, fills empty space around image */
+  display: none;
+  border-radius: 15px;
+}
+
+/* Video Card */
+.card {
+  background: white;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.1);
+  text-align: center;
+}
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+.card iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 15px;
+}
+
+/* Love Letter */
+#love-letter {
+  display: none;
+  background: #ffe6f0;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 700px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+/* Hidden Treasure */
+#treasure {
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  font-size: 24px;
+  color: pink;
+  transition: transform 0.3s;
+}
+#treasure:hover { transform: scale(1.3); }
+
+/* Falling petals container */
+#petals {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bg-music" src="music.mp3" autoplay loop></audio>
+<div style="text-align:center; margin-top:20px;">
+  <button onclick="toggleMusic()">🎵 Play/Pause Music</button>
+</div>
+
+<!-- Floating Hearts -->
+<span class="heart" style="left:10%; animation-duration:6s;">❤️</span>
+<span class="heart" style="left:30%; animation-duration:5s;">💖</span>
+<span class="heart" style="left:50%; animation-duration:7s;">💕</span>
+<span class="heart" style="left:70%; animation-duration:6.5s;">💗</span>
+<span class="heart" style="left:90%; animation-duration:5.5s;">❤️</span>
+
+<!-- Landing Page -->
+<div class="hero">
+  <div>
+    <h1>Three Months of Us ❤️</h1>
+    <button onclick="startStory()">Enter Our Story</button>
+  </div>
+</div>
+
+<!-- Story Section -->
+<div id="story" class="section">
+
+  <!-- Countdown -->
+  <div id="countdown">3</div>
+
+  <!-- Slideshow of 13 photos -->
+  <div class="slideshow-container">
+    <img class="slide" src="images/photo1.jpg">
+    <img class="slide" src="images/photo2.jpg">
+    <img class="slide" src="images/photo3.jpg">
+    <img class="slide" src="images/photo4.jpg">
+    <img class="slide" src="images/photo5.jpg">
+    <img class="slide" src="images/photo6.jpg">
+    <img class="slide" src="images/photo7.jpg">
+    <img class="slide" src="images/photo8.jpg">
+    <img class="slide" src="images/photo9.jpg">
+    <img class="slide" src="images/photo10.jpg">
+    <img class="slide" src="images/photo11.jpg">
+    <img class="slide" src="images/photo12.jpg">
+    <img class="slide" src="images/photo13.jpg">
+  </div>
+
+  <!-- Google Drive Video -->
+  <div class="card">
+    <h2>Our Special Video</h2>
+    <p>Watch this memory we made together 🎥</p>
+    <iframe src="https://drive.google.com/file/d/YOUR_DRIVE_FILE_ID/preview" 
+            frameborder="0" allow="autoplay" allowfullscreen></iframe>
+  </div>
+
+  <!-- Love Letter Button -->
+  <div style="text-align:center; margin-top:30px;">
+    <button onclick="showLoveLetter()" style="padding:15px 30px; font-size:18px; border-radius:20px; background:pink; border:none; cursor:pointer;">💌 Open Love Letter 💌</button>
+  </div>
+
+  <!-- Love Letter Content -->
+  <div id="love-letter">
+    <p>My love, these past three months with you have been the happiest of my life. Every smile, every laugh, every moment reminds me how lucky I am to have you. I love you more than words can say, and I cannot wait to make endless memories together. ❤️</p>
+  </div>
+
+  <!-- Hidden Treasure -->
+  <p id="treasure" onclick="revealTreasure()">💖 Click me for a secret ❤️</p>
+
+  <!-- Petals container -->
+  <div id="petals"></div>
+
+</div>
+
+<script>
+// Countdown
+function startStory() {
+  let count = 3;
+  const countdownEl = document.getElementById('countdown');
+  const interval = setInterval(() => {
+    count--;
+    if(count <= 0) {
+      countdownEl.style.display = 'none';
+      clearInterval(interval);
+      showSlides();
+    } else {
+      countdownEl.textContent = count;
+    }
+  }, 1000);
+}
+
+// Slideshow
+let index = 0;
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i=0; i<slides.length; i++) { slides[i].style.display = "none"; }
+  index++;
+  if (index > slides.length) { index = 1; }
+  slides[index-1].style.display = "block";
+  setTimeout(showSlides, 3000);
+}
+
+// Hidden Treasure
+function revealTreasure() {
+  alert("I love you forever ❤️ You are my everything.");
+}
+
+// Background Music Play/Pause
+function toggleMusic() {
+  const music = document.getElementById('bg-music');
+  if (music.paused) music.play();
+  else music.pause();
+}
+
+// Love Letter Fade-in + Petals
+function showLoveLetter() {
+  const letter = document.getElementById('love-letter');
+  letter.style.display = 'block';
+  letter.style.opacity = 0;
+  let opacity = 0;
+  const fade = setInterval(() => {
+    opacity += 0.05;
+    letter.style.opacity = opacity;
+    if(opacity >= 1) clearInterval(fade);
+  }, 30);
+
+  // Falling petals
+  for(let i=0;i<30;i++){
+    const petal = document.createElement('span');
+    petal.textContent = '🌸';
+    petal.style.position = 'absolute';
+    petal.style.left = Math.random()*100 + 'vw';
+    petal.style.fontSize = (10 + Math.random()*20) + 'px';
+    petal.style.opacity = Math.random();
+    petal.style.transition = 'transform 4s linear, opacity 4s linear';
+    document.getElementById('petals').appendChild(petal);
+
+    setTimeout(()=>{
+      petal.style.transform = 'translateY(100vh) rotate(' + (Math.random()*360) + 'deg)';
+      petal.style.opacity = 0;
+    }, 50);
+
+    setTimeout(()=>{ petal.remove(); }, 4000);
+  }
+}
+</script>
+
+</body>
+</html>
