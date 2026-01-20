@@ -14,7 +14,7 @@
   }
 
   h1 {
-    text-align:center;
+    text-align:center; 
     margin-top:30px;
     font-size: 2.2em;
   }
@@ -40,13 +40,12 @@
   }
 
   /* Buttons */
-  .buttons { text-align: center; margin: 20px; }
   .btn {
     background-color: transparent;
     border: 2px solid #f5f5f5;
     color: #f5f5f5;
     padding: 10px 25px;
-    margin: 5px;
+    margin: 10px 5px;
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
@@ -61,7 +60,7 @@
     animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite; }
   @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity:1; } 100% { transform: translateY(100vh) rotate(360deg); opacity:0; } }
 
-  /* Modal for video */
+  /* Video Modal */
   .modal {
     display: none;
     position: fixed;
@@ -106,24 +105,19 @@
 
 <!-- Slideshow -->
 <div class="slideshow-container">
-  <img class="slide" src="photo1.jpg">
-  <img class="slide" src="photo2.jpg">
-  <img class="slide" src="photo3.jpg">
-  <img class="slide" src="photo4.jpg">
-  <img class="slide" src="photo5.jpg">
-  <img class="slide" src="photo6.jpg">
-  <img class="slide" src="photo7.jpg">
-  <img class="slide" src="photo8.jpg">
-  <img class="slide" src="photo9.jpg">
-  <img class="slide" src="photo10.jpg">
-  <img class="slide" src="photo11.jpg">
-  <img class="slide" src="photo12.jpg">
-  <img class="slide" src="photo13.jpg">
-</div>
-
-<div class="buttons">
-  <button class="btn" onclick="prevSlide()">Previous</button>
-  <button class="btn" onclick="nextSlide()">Next</button>
+  <img class="slide" src="photo1.jpg" alt="">
+  <img class="slide" src="photo2.jpg" alt="">
+  <img class="slide" src="photo3.jpg" alt="">
+  <img class="slide" src="photo4.jpg" alt="">
+  <img class="slide" src="photo5.jpg" alt="">
+  <img class="slide" src="photo6.jpg" alt="">
+  <img class="slide" src="photo7.jpg" alt="">
+  <img class="slide" src="photo8.jpg" alt="">
+  <img class="slide" src="photo9.jpg" alt="">
+  <img class="slide" src="photo10.jpg" alt="">
+  <img class="slide" src="photo11.jpg" alt="">
+  <img class="slide" src="photo12.jpg" alt="">
+  <img class="slide" src="photo13.jpg" alt="">
 </div>
 
 <!-- Links -->
@@ -147,17 +141,22 @@
 </div>
 
 <script>
-  // Slideshow
+  // Automatic Slideshow
   let slideIndex = 0;
   const slides = document.getElementsByClassName("slide");
-  showSlide(slideIndex);
 
   function showSlide(n){
-    for(let i=0;i<slides.length;i++){slides[i].style.display="none";}
+    for(let i=0;i<slides.length;i++){ slides[i].style.display="none"; }
     slides[n].style.display="block";
   }
-  function nextSlide(){ slideIndex = (slideIndex+1)%slides.length; showSlide(slideIndex); }
-  function prevSlide(){ slideIndex = (slideIndex-1+slides.length)%slides.length; showSlide(slideIndex); }
+
+  function autoSlide(){
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  showSlide(slideIndex);
+  setInterval(autoSlide, 4000); // Change slide every 4 seconds
 
   // Music
   const music = new Audio("music.mp3");
@@ -167,7 +166,7 @@
     else{music.pause(); document.getElementById("musicBtn").innerText="Play Music";}
   });
 
-  // Subtle petals
+  // Petals
   function createPetal(){
     const petal = document.createElement("div");
     petal.className = "petal";
@@ -177,7 +176,7 @@
     document.body.appendChild(petal);
     setTimeout(()=>{petal.remove()}, 12000);
   }
-  setInterval(createPetal, 1000);
+  setInterval(createPetal, 1200);
 
   // Video modal
   const modal = document.getElementById("videoModal");
